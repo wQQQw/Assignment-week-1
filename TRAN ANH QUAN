@@ -1,0 +1,38 @@
+let minNumber = parseInt(prompt("What is your min number?"));
+let maxNumber = parseInt(prompt("What is your max number?"));
+
+    function randomNumber(minNumber,maxNumber){
+    return Math.floor(Math.random() * (maxNumber - minNumber +1) + minNumber);
+    } 
+
+    let random = randomNumber(minNumber,maxNumber);
+
+let guessNumber = parseInt(prompt("Guess a number between Min Number and Max Number:"));
+
+if (guessNumber == random){
+  let result = ("Congratuation! You are so lucky ^^!");
+  console.log(result);
+}
+else {
+  do{
+    if (guessNumber > random){
+      let message = prompt("Your number is too high, Do you want to choose another number again?\nYES or NO");
+         if (message == "NO"){
+         console.log("You are lose!!!");
+         }
+         else{
+           do{
+             let guessAgain = parseInt(prompt("Guess another number again!!!"));
+           }
+           while (guessAgain == random);
+         }
+    }
+    else{
+      let message = prompt("Your number is too low, Do you want to choose another number again?\nYES of NO");
+         if (message == "NO"){
+         console.log("You are lose!!!");           
+         }  
+    }
+  } 
+  while(guessNumber == random);
+}  
